@@ -159,4 +159,13 @@ describe('task', function() {
     done();
   });
 
+  it('should throw on non-valid tasks chain', function(done) {
+    function fail() {
+      taker.task('test1', ['foo', 'bar']);
+    }
+
+    expect(fail).toThrow();
+    done();
+  });
+
 });
